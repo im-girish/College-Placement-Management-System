@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="number"] {
+            appearance: textfield;
+        }
+        .form-group input[type="file"] {
+            padding: 3px;
+        }
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Update Profile</h2>
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="STUDENT_USN">Student USN</label>
+                <input type="text" id="STUDENT_USN" name="STUDENT_USN" value="{{ student.STUDENT_USN }}" required>
+            </div>
+            <div class="form-group">
+                <label for="FIRST_NAME">First Name</label>
+                <input type="text" id="FIRST_NAME" name="FIRST_NAME" value="{{ student.FIRST_NAME }}" required>
+            </div>
+            <div class="form-group">
+                <label for="LAST_NAME">Last Name</label>
+                <input type="text" id="LAST_NAME" name="LAST_NAME" value="{{ student.LAST_NAME }}" required>
+            </div>
+            <div class="form-group">
+                <label for="DATE_OF_BIRTH">Date of Birth</label>
+                <input type="date" id="DATE_OF_BIRTH" name="DATE_OF_BIRTH" value="{{ student.DATE_OF_BIRTH }}" required>
+            </div>
+            <div class="form-group">
+                <label for="EMAIL_ID">Email ID</label>
+                <input type="text" id="EMAIL_ID" name="EMAIL_ID" value="{{ student.EMAIL_ID }}" required>
+            </div>
+            <div class="form-group">
+                <label for="SSLC_MARKS">SSLC Marks</label>
+                <input type="number" step="0.01" id="SSLC_MARKS" name="SSLC_MARKS" value="{{ student.SSLC_MARKS }}" required>
+            </div>
+            <div class="form-group">
+                <label for="PUC_MARKS">PUC Marks</label>
+                <input type="number" step="0.01" id="PUC_MARKS" name="PUC_MARKS" value="{{ student.PUC_MARKS }}" required>
+            </div>
+            <div class="form-group">
+                <label for="BE_CGPA">BE CGPA</label>
+                <input type="number" step="0.01" id="BE_CGPA" name="BE_CGPA" value="{{ student.BE_CGPA }}" required>
+            </div>
+            <div class="form-group">
+                <label for="SKILLS">Skills</label>
+                <input type="text" id="SKILLS" name="SKILLS" value="{{ student.SKILLS }}" required>
+            </div>
+            <div class="form-group">
+                <label for="ACHIEVEMENTS">Achievements</label>
+                <input type="text" id="ACHIEVEMENTS" name="ACHIEVEMENTS" value="{{ student.ACHIEVEMENTS }}">
+            </div>
+            <div class="form-group">
+                <label for="JOB_TYPE">Job Type</label>
+                <input type="text" id="JOB_TYPE" name="JOB_TYPE" value="{{ student.JOB_TYPE }}" required>
+            </div>
+            <div class="form-group">
+                <label for="RESUME">Resume</label>
+                <input type="file" id="RESUME" name="RESUME">
+            </div>
+            <div class="form-group">
+                <label for="PHOTO">Photo</label>
+                <input type="file" id="PHOTO" name="PHOTO">
+            </div>
+            <div class="form-group">
+                <label for="GENDER">Gender</label>
+                <input type="text" id="GENDER" name="GENDER" value="{{ student.GENDER }}" required>
+            </div>
+            <div class="form-group">
+                <label for="PHONE_NUMBER">Phone Number</label>
+                <input type="text" id="PHONE_NUMBER" name="PHONE_NUMBER" value="{{ student.PHONE_NUMBER }}" required>
+            </div>
+            <div class="form-group">
+                <label for="BRANCH">Branch</label>
+                <input type="text" id="BRANCH" name="BRANCH" value="{{ student.BRANCH }}" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update Profile">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

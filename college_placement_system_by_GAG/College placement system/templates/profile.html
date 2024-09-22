@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+</head>
+<body>
+    <h1>Student Profile</h1>
+    <p><strong>Student USN:</strong> {{ student.STUDENT_USN }}</p>
+    <p><strong>Name:</strong> {{ student.FIRST_NAME }} {{ student.LAST_NAME }}</p>
+    <p><strong>Date of Birth:</strong> {{ student.DATE_OF_BIRTH }}</p>
+    <p><strong>Email:</strong> {{ student.EMAIL_ID }}</p>
+    <p><strong>SSLC Marks:</strong> {{ student.SSLC_MARKS }}</p>
+    <p><strong>PUC Marks:</strong> {{ student.PUC_MARKS }}</p>
+    <p><strong>BE CGPA:</strong> {{ student.BE_CGPA }}</p>
+    <p><strong>Skills:</strong> {{ student.SKILLS }}</p>
+    <p><strong>Achievements:</strong> {{ student.ACHIEVEMENTS }}</p>
+    <p><strong>Job Type:</strong> {{ student.JOB_TYPE }}</p>
+    <!-- Add more fields as necessary -->
+    
+    <img src="{{ url_for('uploads', filename=student.PHOTO) }}" alt="Student Photo">
+    <br>
+    <a href="{{ url_for('uploaded', filename=student.RESUME) }}">Download Resume</a>
+    
+    <p><strong>Gender:</strong> {{ student.GENDER }}</p>
+    <p><strong>Phone Number:</strong> {{ student.PHONE_NUMBER }}</p>
+    <p><strong>Branch:</strong> {{ student.BRANCH }}</p>
+</body>
+</html>

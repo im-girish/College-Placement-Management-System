@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - College Placement System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 60px; /* Prevent content from being hidden under fixed header */
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 80px; /* Adjust margin to accommodate fixed header */
+            text-align: center;
+        }
+
+        .profile-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .profile-container .profile-photo {
+            margin-bottom: 20px;
+        }
+
+        .profile-container .profile-photo img {
+            border-radius: 50%;
+            max-width: 150px;
+        }
+
+        .profile-container table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .profile-container table, .profile-container th, .profile-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .profile-container th {
+            background-color: #4CAF50;
+            color: white;
+            text-align: left;
+        }
+
+        .profile-container td {
+            text-align: left;
+        }
+
+        .profile-container .profile-info {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 20px;
+            }
+
+            header {
+                padding: 1em 0 3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>College Placement System - Student Profile</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <div class="profile-container">
+        <h2>{{ student['student_name'] }}'s Profile</h2>
+        <div class="profile-photo">
+            <img src="{{ url_for('upload_filename', filename=student['photo']) }}" alt="Profile Photo">
+        </div>
+        <table>
+            <tr>
+                <th>FIRST NAME</th>
+                <td>{{ student['username'] }}</td>
+            </tr>
+            <tr>
+                <th>LAST NAME</th>
+                <td>{{ student['email'] }}</td>
+            </tr>
+            <tr>
+                <th>DATE OF BIRTH</th>
+                <td>{{ student['class_name'] }}</td>
+            </tr>
+            <tr>
+                <th>EMAIL ID</th>
+                <td>{{ student['sslc_marks'] }}</td>
+            </tr>
+            <tr>
+                <th>SSLC Marks(%)</th>
+                <td>{{ student['puc_marks'] }}</td>
+            </tr>
+            <tr>
+                <th>PUC MARKS(%)</th>
+                <td>{{ student['address'] }}</td>
+            </tr>
+            <tr>
+                <th>CGPA</th>
+                <td>{{ student['country'] }}</td>
+            </tr>
+            <tr>
+                <th>SKILLS</th>
+                <td>{{ student['state'] }}</td>
+            </tr>
+            <tr>
+                <th>Achievements</th>
+                <td>{{ student['board'] }}</td>
+            </tr>
+            <tr>
+                <th>Working Type</th>
+                <td>{{ student['academic_performance'] }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

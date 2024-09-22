@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .profile-details {
+            margin: 0 auto;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .profile-details th, .profile-details td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .profile-details th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .profile-details tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .profile-details tr:hover {
+            background-color: #f1f1f1;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Profile</h1>
+        <table class="profile-details">
+            <tr>
+                <th>Student USN</th>
+                <td>{{ student.STUDENT_USN }}</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>{{ student.FIRST_NAME }}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{ student.LAST_NAME }}</td>
+            </tr>
+            <tr>
+                <th>DOB</th>
+                <td>{{ student.DOB }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ student.email }}</td>
+            </tr>
+            <tr>
+                <th>SSLC Marks</th>
+                <td>{{ student.sslc_marks }}</td>
+            </tr>
+            <tr>
+                <th>PUC Marks</th>
+                <td>{{ student.puc_marks }}</td>
+            </tr>
+            <tr>
+                <th>CGPA</th>
+                <td>{{ student.cgpa }}</td>
+            </tr>
+            <tr>
+                <th>Skills</th>
+                <td>{{ student.skills }}</td>
+            </tr>
+            <tr>
+                <th>Achievements</th>
+                <td>{{ student.achievements }}</td>
+            </tr>
+            <!-- Uncomment the line below if needed -->
+            <!-- <tr>
+                <th>Academic Performance</th>
+                <td>{{ student.academic_performance }}</td>
+            </tr> -->
+        </table>
+        <a href="{{ url_for('student_dashboard') }}" class="btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        .student_profile_form_container {
+            display: flex;
+            flex-direction: column;
+            background-color: aquamarine;
+            text-align: center;
+            padding: 20px;
+            width: 900px;
+            margin: 50px auto;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            color: black;
+            display: flex;
+            flex-direction: column;
+            background-color: bisque;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+        }
+        #submit_student_profile {
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Profile</h1><br>
+    <hr>
+    <div class="student_profile_form_container">
+        <form action="{{ url_for('submit') }}" method="POST" enctype="multipart/form-data">
+            <label for="STUDENT_USN">Enter Student USN:</label>
+            <input type="text" id="STUDENT_USN" name="STUDENT_USN" required><br>
+
+            <label for="FIRST_NAME">First Name:</label>
+            <input type="text" id="FIRST_NAME" name="FIRST_NAME" required><br>
+
+            <label for="LAST_NAME">Last Name:</label>
+            <input type="text" id="LAST_NAME" name="LAST_NAME" required><br>
+
+            <label for="EMAIL_ID">BNMIT EMAIL ID:</label>
+            <input type="text" id="EMAIL_ID" name="EMAIL_ID" required><br>
+
+            <label for="DATE_OF_BIRTH">Enter Date of Birth:</label>
+            <input type="date" id="DATE_OF_BIRTH" name="DATE_OF_BIRTH" required><br>
+
+            <label for="GENDER">Choose Gender:</label>
+            <select id="GENDER" name="GENDER" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <label for="PHONE_NUMBER">Enter Phone Number:</label>
+            <input type="tel" id="PHONE_NUMBER" name="PHONE_NUMBER"><br>
+
+            <label for="BRANCH">Enter Branch:</label>
+            <input type="text" id="BRANCH" name="BRANCH"><br>
+
+            <label for="SSLC_MARKS">SSLC Marks(%):</label>
+            <input type="text" id="SSLC_MARKS" name="SSLC_MARKS" required><br>
+
+            <label for="PUC_MARKS">PU Marks(%):</label>
+            <input type="text" id="PUC_MARKS" name="PUC_MARKS" required><br>
+
+            <label for="BE_CGPA">CGPA:</label>
+            <input type="text" id="BE_CGPA" name="BE_CGPA" required><br>
+
+            <label for="SKILLS">Skills:</label>
+            <input type="text" id="SKILLS" name="SKILLS" required><br>
+
+            <label for="ACHIEVEMENTS">ACHIEVEMENTS </label>
+            <input type="text" id="ACHIEVEMENTS" name="ACHIEVEMENTS"><BR>
+
+            <label for="JOB_TYPE">Choose Job Stream of your Interest:</label>
+            <select id="JOB_TYPE" name="JOB_TYPE" required>
+                <option value="software">Software</option>
+                <option value="hardware">Hardware</option>
+            </select><br>
+
+            <label for="RESUME">Upload resume:</label>
+            <input type="file" id="RESUME" name="RESUME" required><br>
+
+            <label for="PHOTO">Upload Photo:</label>
+            <input type="file" id="PHOTO" name="PHOTO" required><br>
+
+            <input type="submit" value="Submit" id="submit_student_profile">
+        </form>
+        <a href="{{url_for('student_dashboard')}}" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
